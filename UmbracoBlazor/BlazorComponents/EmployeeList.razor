@@ -1,0 +1,35 @@
+﻿@page "/EmployeeList"
+@inherits UmbracoBlazor.BlazorComponents.EmployeeListBase
+
+
+<h3>EmployeeList</h3>
+@if (Employees == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <div class="card-deck">
+        @foreach (var item in Employees)
+        {
+            <div class="card m-3">
+                <div class="card-header">
+                    @item.FirstName @item.LastName
+                </div>
+                <div class="card-body">
+                    <img src="@item.PhotoPath" class="img-responsive" />
+                    @if (item.Department != null)
+                    {
+                        <h4>@item.Department.DepartmentName</h4>
+                    }
+                </div>
+                <div class="card-footer text-center">
+                    <a href="@($"EmployeeDetails/{item.Id}")" class="btn btn-primary m-1">View</a>
+                    <a href="" class="btn btn-primary m-1">Edit</a>
+                    <a href="" class="btn btn-danger m-1">Delete</a>
+                </div>
+            </div>
+        }
+    </div>
+}
+

@@ -1,0 +1,28 @@
+﻿@page "/Account/Registration"
+@inherits RegistrationBase
+@layout LoginLayout
+
+
+<h3>Registration Account</h3>
+
+<input type="submit" class="btn btn-primary" value="Register" @onclick="RegisterMe" />
+
+
+<style>
+    body {
+        background-color: gray;
+    }
+
+    .page {
+        max-width: 600px;
+        margin: 0px auto;
+        background-color: white;
+        padding: 51px;
+        margin-top: 50px;
+        border-radius: 6px;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+</style>

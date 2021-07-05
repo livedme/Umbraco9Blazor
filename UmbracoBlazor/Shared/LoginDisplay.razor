@@ -1,0 +1,22 @@
+﻿@using UmbracoBlazor.Models; 
+@inject AuthenticationStateProvider authenticationStateProvider
+
+<AuthorizeView>
+    <Authorized>
+        <a href="Identity/Account/Manage">Hello, @context.User.Identity.Name!</a>
+        <button type="submit" class="nav-link btn btn-link" @onclick="Logout">Log out</button>
+    </Authorized>
+    <NotAuthorized>
+        <a href="Identity/Account/Register">Register</a>
+        <a href="Identity/Account/login">Identity Login</a>
+        <a href="login">Blazor Login</a>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code{
+    public void Logout()
+    {
+        ((CustomAuthenticationStateProvider)authenticationStateProvider).UserLogout();        
+
+    }
+}

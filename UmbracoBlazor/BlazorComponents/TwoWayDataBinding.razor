@@ -1,0 +1,20 @@
+﻿@page "/TwoWayDataBindingBase"
+@inherits TwoWayDataBindingBase
+<h3>TwoWayDataBinding</h3>
+@Name
+<br />
+<br />
+<input @bind="Name" @bind:event="oninput" />
+<br />
+<br />
+
+@*<input value="@Name" />*@
+<br />
+<br />
+@*<input value="@Name" @onchange="@(e=>{ Name = e.Value.ToString(); })" />*@
+<br />
+<br />
+@*<input @bind="Name" />*@
+<br />
+<br />
+
